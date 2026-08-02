@@ -17,6 +17,21 @@
     <title>Filatecnica · Informática y Telefonía IP para empresas</title>
   </head>
   <body>
+    <!-- Formulario oculto para deteccion de Netlify Forms (soporta adjuntos) -->
+    <form
+      name="contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+      enctype="multipart/form-data"
+    >
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+      <input type="file" name="file" />
+      <input type="text" name="bot-field" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

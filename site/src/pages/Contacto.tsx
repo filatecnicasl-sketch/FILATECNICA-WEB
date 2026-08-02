@@ -26,18 +26,25 @@ const cards = [
 
 export function Contacto() {
   const [consent, setConsent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
+  const [fileName, setFileName] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const message = String(data.get("message") ?? "");
-    const subject = encodeURIComponent(`Contacto web · ${name || "Nuevo mensaje"}`);
-    const body = encodeURIComponent(
-      `Nombre: ${name}\nEmail: ${email}\n\n${message}`,
-    );
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setStatus("sending");
+    try {
+      await fetch("/", { method: "POST", body: data });
+      setStatus("sent");
+      form.reset();
+      setConsent(false);
+      setFileName("");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -102,9 +109,20 @@ export function Contacto() {
 
           <Reveal delay={0.1}>
             <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              encType="multipart/form-data"
               onSubmit={handleSubmit}
               className="rounded-3xl border border-line bg-surface p-6 shadow-sm sm:p-8"
             >
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  No rellenar: <input name="bot-field" />
+                </label>
+              </p>
               <div className="grid gap-5">
                 <Field label="Nombre" name="name" required placeholder="Tu nombre" />
                 <Field
@@ -134,6 +152,27 @@ export function Contacto() {
                   />
                 </div>
 
+                <div>
+                  <label htmlFor="file" className="text-sm font-bold text-navy">
+                    Adjuntar archivo{" "}
+                    <span className="font-normal text-muted">(opcional)</span>
+                  </label>
+                  <input
+                    id="file"
+                    name="file"
+                    type="file"
+                    onChange={(e) =>
+                      setFileName(e.target.files?.[0]?.name ?? "")
+                    }
+                    className="mt-2 w-full cursor-pointer rounded-xl border border-line bg-canvas px-4 py-3 text-[0.95rem] text-navy outline-none transition-all file:mr-4 file:cursor-pointer file:rounded-lg file:border-0 file:bg-brand-050 file:px-4 file:py-2 file:text-sm file:font-bold file:text-brand hover:file:bg-brand-100 focus:border-brand focus:ring-4 focus:ring-brand/15"
+                  />
+                  <p className="mt-1.5 text-xs text-muted">
+                    {fileName
+                      ? `Archivo seleccionado: ${fileName}`
+                      : "Puedes adjuntar presupuestos, capturas o documentos (PDF, imágenes…)."}
+                  </p>
+                </div>
+
                 <label className="flex items-start gap-3 text-sm text-muted">
                   <input
                     type="checkbox"
@@ -151,11 +190,25 @@ export function Contacto() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-md shadow-brand/25 transition-all hover:bg-brand-600 hover:shadow-lg"
+                  disabled={status === "sending"}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-md shadow-brand/25 transition-all hover:bg-brand-600 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Enviar mensaje
+                  {status === "sending" ? "Enviando…" : "Enviar mensaje"}
                   <IconArrow className="h-5 w-5" />
                 </button>
+
+                {status === "sent" && (
+                  <p className="rounded-xl border border-brand/20 bg-brand-050 px-4 py-3 text-sm font-semibold text-brand">
+                    ¡Gracias! Hemos recibido tu mensaje y te responderemos lo
+                    antes posible.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-600">
+                    No se pudo enviar. Inténtalo de nuevo o escríbenos a{" "}
+                    {site.email}.
+                  </p>
+                )}
               </div>
             </form>
           </Reveal>
