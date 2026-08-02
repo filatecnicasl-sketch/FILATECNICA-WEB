@@ -81,11 +81,12 @@ export function Hero() {
           />
           <div className="relative overflow-hidden rounded-3xl bg-surface shadow-xl shadow-navy/10 ring-1 ring-line">
             <img
-              src="/hero.png"
+              src="/hero.webp"
               alt="Técnico de Filatècnica atendiendo a un cliente en su empresa"
               width={720}
               height={720}
               fetchPriority="high"
+              decoding="async"
               className="aspect-[5/4] h-full w-full object-cover"
             />
           </div>
