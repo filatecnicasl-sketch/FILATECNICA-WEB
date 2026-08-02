@@ -169,6 +169,52 @@ export function Software() {
       <section className="pb-16 lg:pb-20">
         <Container>
           <Reveal>
+            <article className="overflow-hidden rounded-3xl border border-line bg-surface p-8 shadow-sm shadow-navy/[0.04] lg:p-12">
+              <div className="grid items-center gap-10 lg:grid-cols-2">
+                <div className="order-2 lg:order-1">
+                  <span className="inline-flex rounded-full border border-line bg-warm px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-navy/70">
+                    FactoryPOS · TPV hostelería
+                  </span>
+                  <h3 className="mt-5 text-3xl font-extrabold tracking-tight text-navy sm:text-[2.2rem]">
+                    El TPV que agiliza tu bar o restaurante
+                  </h3>
+                  <p className="mt-4 text-lg leading-relaxed text-muted">
+                    Toma comandas desde tablet o móvil, gestiona salas y mesas y
+                    controla la caja en tiempo real. Una solución probada, con
+                    instalación, formación y soporte de nuestro equipo.
+                  </p>
+
+                  <div className="mt-8">
+                    <Link
+                      to="/contacto"
+                      className="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-md shadow-brand/25 transition-all hover:bg-brand-600 hover:shadow-lg"
+                    >
+                      Solicita una demo
+                      <IconArrow className="h-5 w-5" />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="order-1 lg:order-2">
+                  <img
+                    src="/factorypos-app.webp"
+                    alt="FactoryPOS funcionando en tablet y móvil"
+                    width={600}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    className="mx-auto w-full max-w-md"
+                  />
+                </div>
+              </div>
+            </article>
+          </Reveal>
+        </Container>
+      </section>
+
+      <section className="pb-16 lg:pb-20">
+        <Container>
+          <Reveal>
             <article className="overflow-hidden rounded-3xl border border-brand/15 bg-gradient-to-br from-brand-050 via-surface to-surface p-8 shadow-sm shadow-navy/[0.04] lg:p-12">
               <div className="grid items-center gap-10 lg:grid-cols-2">
                 <div>
