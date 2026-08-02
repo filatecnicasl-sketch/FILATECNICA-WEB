@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation, Outlet } from "react-router-dom";
 import { Nav } from "@/sections/Nav";
 import { Footer } from "@/sections/Footer";
+import { CookieBanner } from "@/components/CookieBanner";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <CookieBanner />
     </>
   );
 }

@@ -131,15 +131,21 @@ export function Footer() {
             reservados.
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-1">
-            <a href="#" className="transition-colors hover:text-brand">
+            <Link to="/aviso-legal" className="transition-colors hover:text-brand">
               Aviso legal
-            </a>
-            <a href="#" className="transition-colors hover:text-brand">
+            </Link>
+            <Link
+              to="/politica-de-privacidad"
+              className="transition-colors hover:text-brand"
+            >
               Política de privacidad
-            </a>
-            <a href="#" className="transition-colors hover:text-brand">
+            </Link>
+            <Link
+              to="/politica-de-cookies"
+              className="transition-colors hover:text-brand"
+            >
               Política de cookies
-            </a>
+            </Link>
           </div>
         </Container>
       </div>

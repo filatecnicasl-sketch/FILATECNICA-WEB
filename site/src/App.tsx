@@ -6,6 +6,9 @@ import { TelefoniaIP } from "@/pages/TelefoniaIP";
 import { Software } from "@/pages/Software";
 import { Energia } from "@/pages/Energia";
 import { Contacto } from "@/pages/Contacto";
+import { AvisoLegal } from "@/pages/AvisoLegal";
+import { Privacidad } from "@/pages/Privacidad";
+import { Cookies } from "@/pages/Cookies";
 
 export default function App() {
   return (
@@ -17,6 +20,9 @@ export default function App() {
         <Route path="/software" element={<Software />} />
         <Route path="/energia" element={<Energia />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/aviso-legal" element={<AvisoLegal />} />
+        <Route path="/politica-de-privacidad" element={<Privacidad />} />
+        <Route path="/politica-de-cookies" element={<Cookies />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>
