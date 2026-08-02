@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Marca Filatecnica */
+  --color-canvas: #f7f9fc;
+  --color-surface: #ffffff;
+  --color-warm: #f2efe9;
+
+  --color-navy: #0b2545;
+  --color-navy-700: #13315c;
+  --color-navy-500: #1d3a63;
+
+  --color-ink: #0b2545;
+  --color-muted: #5b6b82;
+
+  --color-brand: #1b6df3;
+  --color-brand-600: #155ad1;
+  --color-brand-050: #e9f1ff;
+
+  --color-line: #e2e8f2;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-brand);
+    color: #ffffff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
