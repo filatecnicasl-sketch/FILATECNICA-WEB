@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container, Reveal } from "@/components/ui";
+import { NexosProMark } from "@/components/BrandLogos";
 import { IconArrow, IconCheck } from "@/icons";
 
 const features = ["Apps a medida", "Integraciones", "Automatización de procesos"];
@@ -23,9 +24,12 @@ export function NexosPro() {
                   Software a medida · una marca de Filatècnica
                 </span>
 
-                <h2 className="mt-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-                  Nexos<span className="text-brand">Pro</span>
-                </h2>
+                <div className="mt-5 flex items-center gap-3.5">
+                  <NexosProMark className="h-11 w-11 shrink-0 text-white" />
+                  <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+                    Nexos<span className="text-brand">Pro</span>
+                  </h2>
+                </div>
                 <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/70">
                   Nuestra marca de desarrollo de software a medida. Creamos
                   aplicaciones y herramientas digitales diseñadas para encajar
@@ -47,13 +51,15 @@ export function NexosPro() {
                 </ul>
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <Link
-                    to="/nexospro"
+                  <a
+                    href="https://nexospro.es"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-md shadow-brand/30 transition-all hover:bg-brand-600 hover:shadow-lg"
                   >
                     Descubre NexosPro
                     <IconArrow className="h-5 w-5" />
-                  </Link>
+                  </a>
                   <Link
                     to="/contacto"
                     className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 text-base font-bold text-white transition-colors hover:border-white/50"

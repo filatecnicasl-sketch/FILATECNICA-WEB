@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { PageHero } from "@/components/PageHero";
 import { CTASection } from "@/components/CTASection";
 import { Container, Reveal, SectionLabel } from "@/components/ui";
-import { IconArrow, IconCheck, IconLayers, IconStore, IconGlobe } from "@/icons";
+import { NexosProMark } from "@/components/BrandLogos";
+import { IconArrow, IconCheck, IconGlobe } from "@/icons";
 
 const nexosFeatures = [
   "Aplicaciones y ERP a medida",
@@ -65,8 +66,8 @@ export function Software() {
             <Reveal>
               <article className="flex h-full flex-col rounded-3xl border border-line bg-surface p-8 shadow-sm shadow-navy/[0.03]">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-050 text-brand">
-                    <IconLayers className="h-6 w-6" />
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-050 text-navy">
+                    <NexosProMark className="h-7 w-7" />
                   </span>
                   <span className="rounded-full border border-brand/20 bg-brand-050 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-brand">
                     Marca propia
@@ -97,13 +98,15 @@ export function Software() {
                 </ul>
 
                 <div className="mt-8 flex flex-wrap gap-3 pt-2">
-                  <Link
-                    to="/nexospro"
+                  <a
+                    href="https://nexospro.es"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-md shadow-brand/25 transition-all hover:bg-brand-600 hover:shadow-lg"
                   >
                     Descubre NexosPro
                     <IconArrow className="h-5 w-5" />
-                  </Link>
+                  </a>
                 </div>
               </article>
             </Reveal>
@@ -112,8 +115,12 @@ export function Software() {
             <Reveal delay={0.06}>
               <article className="flex h-full flex-col rounded-3xl border border-line bg-surface p-8 shadow-sm shadow-navy/[0.03]">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-050 text-brand">
-                    <IconStore className="h-6 w-6" />
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-warm">
+                    <img
+                      src="/factorypos-mark.png"
+                      alt="FactoryPOS"
+                      className="h-7 w-7 object-contain"
+                    />
                   </span>
                   <span className="rounded-full border border-line bg-warm px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-navy/70">
                     Distribuidor oficial
