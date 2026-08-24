@@ -1,24 +1,25 @@
-/** Logo de NexosPro: "X" de dos trazos (uno hereda color, otro cian de marca). */
-export function NexosProMark({ className }: { className?: string }) {
+/** Logo de Filanex: monograma FX oficial (F + X comparten trazo, punto azul en el cruce). */
+export function FilanexMark({ className }: { className?: string }) {
   return (
     <svg
       className={className}
-      viewBox="0 0 40 40"
+      viewBox="0 0 32 32"
       fill="none"
       aria-hidden="true"
     >
-      <path
-        d="M8 8L32 32"
+      <g
         stroke="currentColor"
-        strokeWidth="3.4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M32 8L8 32"
-        stroke="#00C0F0"
-        strokeWidth="3.4"
-        strokeLinecap="round"
-      />
+        strokeWidth="2.5"
+        strokeLinecap="square"
+      >
+        <path d="M9 25V7h8.5" />
+        <path d="M9 13h4" />
+        <path d="M13 13l4 4" />
+        <path d="M17 17l7.5-7.5" />
+        <path d="M17 17l7.5 7.5" />
+        <path d="M17 17l-5 5" />
+      </g>
+      <circle cx="17" cy="17" r="2.5" fill="#0EA5E9" />
     </svg>
   );
 }

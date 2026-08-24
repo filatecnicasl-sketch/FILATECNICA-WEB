@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { Container, Reveal } from "@/components/ui";
-import { NexosProMark } from "@/components/BrandLogos";
+import { FilanexMark } from "@/components/BrandLogos";
 import { IconArrow, IconCheck } from "@/icons";
 
 const features = ["Apps a medida", "Integraciones", "Automatización de procesos"];
 
-export function NexosPro() {
+export function Filanex() {
   return (
-    <section id="nexospro" className="scroll-mt-24 pb-14 lg:pb-20">
+    <section id="filanex" className="scroll-mt-24 pb-14 lg:pb-20">
       <Container>
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl bg-navy p-8 shadow-xl shadow-navy/20 lg:p-12">
@@ -25,9 +25,9 @@ export function NexosPro() {
                 </span>
 
                 <div className="mt-5 flex items-center gap-3.5">
-                  <NexosProMark className="h-11 w-11 shrink-0 text-white" />
+                  <FilanexMark className="h-11 w-11 shrink-0 text-white" />
                   <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-                    Nexos<span className="text-brand">Pro</span>
+                    Filane<span className="text-brand">x</span>
                   </h2>
                 </div>
                 <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/70">
@@ -52,12 +52,12 @@ export function NexosPro() {
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
                   <a
-                    href="https://nexospro.es"
+                    href="https://filanex.es"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-md shadow-brand/30 transition-all hover:bg-brand-600 hover:shadow-lg"
                   >
-                    Descubre NexosPro
+                    Descubre Filanex
                     <IconArrow className="h-5 w-5" />
                   </a>
                   <Link
@@ -77,7 +77,7 @@ export function NexosPro() {
                     <span className="h-3 w-3 rounded-full bg-white/25" />
                     <span className="h-3 w-3 rounded-full bg-brand" />
                     <span className="ml-3 text-xs font-semibold text-white/40">
-                      nexospro · panel
+                      filanex · panel
                     </span>
                   </div>
                   <div className="space-y-3 p-5">

@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { PageHero } from "@/components/PageHero";
 import { CTASection } from "@/components/CTASection";
 import { Container, Reveal, SectionLabel } from "@/components/ui";
-import { NexosProMark } from "@/components/BrandLogos";
+import { FilanexMark } from "@/components/BrandLogos";
 import { IconArrow, IconCheck, IconGlobe } from "@/icons";
 
-const nexosFeatures = [
+const filanexFeatures = [
   "Aplicaciones y ERP a medida",
   "Integraciones y APIs con tus sistemas",
   "Automatización de procesos",
@@ -37,7 +37,7 @@ export function Software() {
         crumbs={[{ label: "Inicio", to: "/" }, { label: "Software" }]}
         eyebrow="Software"
         title="Software para gestionar mejor tu negocio"
-        subtitle="Desarrollamos software a medida con nuestra marca NexosPro, creamos páginas web que atraen clientes y distribuimos soluciones especializadas como FactoryPOS para hostelería. Elegimos contigo la opción que mejor encaja con tu empresa."
+        subtitle="Desarrollamos software a medida con nuestra marca Filanex, creamos páginas web que atraen clientes y distribuimos soluciones especializadas como FactoryPOS para hostelería. Elegimos contigo la opción que mejor encaja con tu empresa."
       >
         <Link
           to="/contacto"
@@ -62,12 +62,12 @@ export function Software() {
           </Reveal>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {/* NexosPro */}
+            {/* Filanex */}
             <Reveal>
               <article className="flex h-full flex-col rounded-3xl border border-line bg-surface p-8 shadow-sm shadow-navy/[0.03]">
                 <div className="flex items-center gap-3">
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-050 text-navy">
-                    <NexosProMark className="h-7 w-7" />
+                    <FilanexMark className="h-7 w-7" />
                   </span>
                   <span className="rounded-full border border-brand/20 bg-brand-050 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-brand">
                     Marca propia
@@ -75,7 +75,7 @@ export function Software() {
                 </div>
 
                 <h3 className="mt-6 text-2xl font-extrabold text-navy">
-                  Nexos<span className="text-brand">Pro</span>
+                  Filane<span className="text-brand">x</span>
                 </h3>
                 <p className="mt-3 leading-relaxed text-muted">
                   Nuestra marca de desarrollo de software a medida. Creamos
@@ -84,7 +84,7 @@ export function Software() {
                 </p>
 
                 <ul className="mt-6 grid gap-3">
-                  {nexosFeatures.map((f) => (
+                  {filanexFeatures.map((f) => (
                     <li
                       key={f}
                       className="flex items-start gap-3 text-[0.98rem] font-medium text-navy/80"
@@ -99,12 +99,12 @@ export function Software() {
 
                 <div className="mt-8 flex flex-wrap gap-3 pt-2">
                   <a
-                    href="https://nexospro.es"
+                    href="https://filanex.es"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3.5 text-base font-bold text-white shadow-md shadow-brand/25 transition-all hover:bg-brand-600 hover:shadow-lg"
                   >
-                    Descubre NexosPro
+                    Descubre Filanex
                     <IconArrow className="h-5 w-5" />
                   </a>
                 </div>
@@ -274,7 +274,7 @@ export function Software() {
 
       <CTASection
         title="¿No sabes qué solución necesitas?"
-        text="Cuéntanos cómo trabajas y te recomendamos la mejor opción: una página web a medida, desarrollo con NexosPro o software especializado como FactoryPOS."
+        text="Cuéntanos cómo trabajas y te recomendamos la mejor opción: una página web a medida, desarrollo con Filanex o software especializado como FactoryPOS."
       />
     </>
   );
